@@ -15,7 +15,7 @@ pipeline {
          steps {
             sh label: '', script: '''
                         pwd
-                        docker start website-nginx || docker run --name "$name" -d -p 80:80 -v "$(pwd)":/usr/share/nginx/html nginx
+                        docker start website-nginx || docker run --name website-nginx -d -p 80:80 -v "$(pwd)":/usr/share/nginx/html nginx
                         docker ps
                         ls -la
                         '''
